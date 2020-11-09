@@ -48,6 +48,10 @@
       if(params['token'] != undefined) {
         document.querySelector('input[name=token]').value = params['token'];
       }
+
+      var origin = window.location.origin;
+      var form = document.querySelector('form');
+      form.action = origin + '/4DAction/api_put_project';
     });
   </script>
 </head>
