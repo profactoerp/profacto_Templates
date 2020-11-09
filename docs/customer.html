@@ -25,35 +25,7 @@
 
   <link rel="manifest" href="/manifest.json">
 
-  <script type="text/javascript">
-    var submitForm = function(url) {
-      var form = document.querySelector('form');
-      form.action = url;
-      form.submit();
-    }
-
-    var fetchGetParams = function(string) {
-      var raw = string.split('&');
-      var params = {};
-      raw.forEach((param) => {
-        var value = param.split('=');
-        params[value[0]] = value[1];
-      });
-
-      return params;
-    }
-
-    window.addEventListener('load', function(event) {
-      var params = fetchGetParams(window.location.search.substr(1));
-      if(params['token'] != undefined) {
-        document.querySelector('input[name=token]').value = params['token'];
-      }
-
-      var origin = window.location.origin;
-      var form = document.querySelector('form');
-      form.action = origin + '/4DAction/api_put_customer';
-    });
-  </script>
+  <script type="text/javascript" src="./js/form.js"></script>
 </head>
 
 <body>

@@ -25,35 +25,7 @@
 
   <link rel="manifest" href="/manifest.json">
 
-  <script type="text/javascript">
-    var submitForm = function(url) {
-      var form = document.querySelector('form');
-      form.action = url;
-      form.submit();
-    }
-
-    var fetchGetParams = function(string) {
-      var raw = string.split('&');
-      var params = {};
-      raw.forEach((param) => {
-        var value = param.split('=');
-        params[value[0]] = value[1];
-      });
-
-      return params;
-    }
-
-    window.addEventListener('load', function(event) {
-      var params = fetchGetParams(window.location.search.substr(1));
-      if(params['token'] != undefined) {
-        document.querySelector('input[name=token]').value = params['token'];
-      }
-
-      var origin = window.location.origin;
-      var form = document.querySelector('form');
-      form.action = origin + '/4DAction/api_put_project';
-    });
-  </script>
+  <script type="text/javascript" src="./js/form.js"></script>
 </head>
 
 <body>
@@ -69,9 +41,16 @@
 
 <form method="GET" style="padding:12px;">
   <div class="form-group row">
+    <label for="host" class="col-2 col-form-label">Host</label>
+    <div class="col-10">
+      <input id="host" name="host" placeholder="e.g. http://meins-profacto-webserver:8080/" class="form-control" aria-describedby="hostHelpBlock">
+      <span id="hostHelpBlock" class="form-text text-muted">Hier den Host zum Profacto-Webserver eintragen</span>
+    </div>
+  </div>
+  <div class="form-group row">
     <label for="token" class="col-2 col-form-label">Token</label>
     <div class="col-10">
-      <input id="token" name="token" placeholder="Token einfügen" value="96AB62EA86E34BD997EE34F0A48AA85D" type="hidden" class="form-control" aria-describedby="tokenHelpBlock" required="required">
+      <input id="token" name="token" placeholder="Token einfügen" class="form-control" aria-describedby="tokenHelpBlock" required="required">
       <span id="tokenHelpBlock" class="form-text text-muted">Hier das Token für Kunden-API einfügen</span>
     </div>
   </div>
@@ -81,7 +60,7 @@
   <div class="form-group row">
     <label for="name1" class="col-2 col-form-label">Bauvorhaben</label>
     <div class="col-10">
-      <input id="Name1" name="Bauvorhaben" placeholder="" type="text" aria-describedby="name1HelpBlock" required="required" class="form-control">
+      <input id="Name1" name="Bauvorhaben" placeholder="Beschreibung des Bauvorhabens" type="text" aria-describedby="name1HelpBlock" required="required" class="form-control">
       <span id="name1HelpBlock" class="form-text text-muted">Name 1 des Kunden-Eintrags erfassen</span>
     </div>
   </div>
@@ -103,7 +82,7 @@
   <div class="form-group row">
     <div class="offset-2 col-10">
       <input id="response" name="response" value="JSON" placeholder="JSON" type="hidden" class="form-control">
-      <button name="submit" type="submit" class="btn btn-primary" onclick="this.form.submit()">Eintragen</button>
+      <button name="submit" type="submit" class="btn btn-primary">Eintragen</button>
     </div>
   </div>
 </form>
