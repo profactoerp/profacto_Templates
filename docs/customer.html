@@ -20,8 +20,12 @@
   <link rel="shortcut icon" href="/images/favicon.ico" type="image/vnd.microsoft.icon">
   <link rel="icon" href="/images/favicon.ico" type="image/vnd.microsoft.icon">
 
-  <link rel="stylesheet" href="/css/base.css">
-  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/responsive.css">
+  <link rel="stylesheet" href="./css/responsive-tables.css">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <link rel="manifest" href="/manifest.json">
 
@@ -30,67 +34,76 @@
 
 <body>
   <header>
-    <ul class="idbar">
-      <li>
-        <span class="logo"></span>
-    </ul>
+    <dl class="description-header">
+      <dt>
+        api_put_customer
+      </dt>
+    </dl>
+    <dl class="description">
+      <dt>
+        <p>Erforderliche Parameter:</p>
+        <p>Name1, PLZ</p>
+        <p>Ausgeschlossene Parameter:</p>
+        <p>PKUUID_12</p>
+        <p>Konkretes Beispiel:</p>
+        <code>http://meinServer:8080/4DAction/api_put_customer?token=5E05A427CD134432A28F2DAF11EC500E&Name1=Schreinerei%20Meier&PLZ=48149&Strasse=Hauptstr.%201&response=true</code>
+        <p>In der JSON-Rückmeldung wird auch die neue vergebene Kundennummer rückgeliefert:</p>
+        <code>{"success":true,"wasUpdate":false,"mainKey":"n20-01170","processingTime":54,"errorMsg":""}</code>
+      </dt>
+    </dl>
   </header>
 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <main>
+    <form method="GET">
+      <div class="form-group row">
+        <label for="token" class="col-2 col-form-label">Token</label>
+        <div class="col-10">
+          <input id="token" name="token" placeholder="Token einfügen" type="text" class="form-control" aria-describedby="tokenHelpBlock" required="required">
+          <span id="tokenHelpBlock" class="form-text text-muted">Hier das Token für Kunden-API einfügen</span>
+        </div>
+      </div>
 
-<form action="http://alfheimr:8080/4DAction/api_put_customer" method="GET" style="padding:12px;">
-  <div class="form-group row">
-    <label for="token" class="col-2 col-form-label">Token</label>
-    <div class="col-10">
-      <input id="token" name="token" placeholder="Token einfügen" type="text" class="form-control" aria-describedby="tokenHelpBlock" required="required">
-      <span id="tokenHelpBlock" class="form-text text-muted">Hier das Token für Kunden-API einfügen</span>
-    </div>
-  </div>
+      <hr />
 
-  <hr/>
-<!--   <div class="form-group row">
-    <label for="url" class="col-2 col-form-label">URL</label>
-    <div class="col-10">
-      <input id="url" name="url" placeholder="URL des profacto Servers" type="text" class="form-control" required="required" aria-describedby="urlHelpBlock">
-      <span id="urlHelpBlock" class="form-text text-muted">Hier die URl des profacto Servers oder Einzelplatz einfügen</span>
-    </div> -->
-  </div>
-  <div class="form-group row">
-    <label for="name1" class="col-2 col-form-label">Name</label>
-    <div class="col-10">
-      <input id="Name1" name="Name1" placeholder="Hier den ersten Namen einfügen" type="text" aria-describedby="name1HelpBlock" required="required" class="form-control">
-      <span id="name1HelpBlock" class="form-text text-muted">Name 1 des Kunden-Eintrags erfassen</span>
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="strasse" class="col-2 col-form-label">Straße und Hausnr.</label>
-    <div class="col-10">
-      <input id="strasse" name="strasse" placeholder="Straße mit Haus" type="text" aria-describedby="strasseHelpBlock" class="form-control">
-      <span id="strasseHelpBlock" class="form-text text-muted">Straße des Kunden mit Hausnummer</span>
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="plz" class="col-2 col-form-label">PLZ</label>
-    <div class="col-10">
-      <input id="PLZ" name="PLZ" placeholder="Postleitzahl" type="text" class="form-control" required="required" aria-describedby="plzHelpBlock">
-      <span id="plzHelpBlock" class="form-text text-muted">PLZ des Kunden erfassen</span>
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="ort" class="col-2 col-form-label">Ort</label>
-    <div class="col-10">
-      <input id="ort" name="ort" placeholder="Ort" type="text" class="form-control" aria-describedby="ortHelpBlock">
-      <span id="ortHelpBlock" class="form-text text-muted">Ort der Adresse</span>
-    </div>
-  </div>
-  <div class="form-group row">
-    <div class="offset-2 col-10">
-      <input id="response" name="response" value="JSON" placeholder="JSON" type="hidden" class="form-control">
-      <button name="submit" type="submit" class="btn btn-primary">Eintragen</button>
-    </div>
-  </div>
-</form>
+      </div>
+      <div class="form-group row">
+        <label for="name1" class="col-2 col-form-label">Name</label>
+        <div class="col-10">
+          <input id="Name1" name="Name1" placeholder="Hier den ersten Namen einfügen" type="text" aria-describedby="name1HelpBlock" required="required" class="form-control">
+          <span id="name1HelpBlock" class="form-text text-muted">Name 1 des Kunden-Eintrags erfassen</span>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="strasse" class="col-2 col-form-label">Straße und Hausnr.</label>
+        <div class="col-10">
+          <input id="strasse" name="strasse" placeholder="Straße mit Hausnummer" type="text" aria-describedby="strasseHelpBlock" class="form-control">
+          <span id="strasseHelpBlock" class="form-text text-muted">Straße des Kunden mit Hausnummer</span>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="plz" class="col-2 col-form-label">PLZ</label>
+        <div class="col-10">
+          <input id="PLZ" name="PLZ" placeholder="Postleitzahl" type="text" class="form-control" required="required" aria-describedby="plzHelpBlock">
+          <span id="plzHelpBlock" class="form-text text-muted">PLZ des Kunden erfassen</span>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="ort" class="col-2 col-form-label">Ort</label>
+        <div class="col-10">
+          <input id="ort" name="ort" placeholder="Ort" type="text" class="form-control" aria-describedby="ortHelpBlock">
+          <span id="ortHelpBlock" class="form-text text-muted">Ort der Adresse</span>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="offset-2 col-10">
+          <input id="response" name="response" value="JSON" placeholder="JSON" type="hidden" class="form-control">
+          <button name="submit" type="submit" class="btn btn-primary">Eintragen</button>
+        </div>
+      </div>
+    </form>
+  </main>
+  <footer>
+  </footer>
 
 </body>
 

@@ -20,8 +20,12 @@
   <link rel="shortcut icon" href="/images/favicon.ico" type="image/vnd.microsoft.icon">
   <link rel="icon" href="/images/favicon.ico" type="image/vnd.microsoft.icon">
 
-  <link rel="stylesheet" href="/css/base.css">
-  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/responsive.css">
+  <link rel="stylesheet" href="./css/responsive-tables.css">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <link rel="manifest" href="/manifest.json">
 
@@ -36,57 +40,57 @@
     </ul>
   </header>
 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <main>
+    <form method="GET">
+      <div class="form-group row">
+        <label for="host" class="col-2 col-form-label">Host</label>
+        <div class="col-10">
+          <input id="host" name="host" placeholder="e.g. http://meins-profacto-webserver:8080/" class="form-control" aria-describedby="hostHelpBlock">
+          <span id="hostHelpBlock" class="form-text text-muted">Hier den Host zum Profacto-Webserver eintragen</span>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="token" class="col-2 col-form-label">Token</label>
+        <div class="col-10">
+          <input id="token" name="token" placeholder="Token einfügen" class="form-control" aria-describedby="tokenHelpBlock" required="required">
+          <span id="tokenHelpBlock" class="form-text text-muted">Hier das Token für Kunden-API einfügen</span>
+        </div>
+      </div>
 
-<form method="GET" style="padding:12px;">
-  <div class="form-group row">
-    <label for="host" class="col-2 col-form-label">Host</label>
-    <div class="col-10">
-      <input id="host" name="host" placeholder="e.g. http://meins-profacto-webserver:8080/" class="form-control" aria-describedby="hostHelpBlock">
-      <span id="hostHelpBlock" class="form-text text-muted">Hier den Host zum Profacto-Webserver eintragen</span>
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="token" class="col-2 col-form-label">Token</label>
-    <div class="col-10">
-      <input id="token" name="token" placeholder="Token einfügen" class="form-control" aria-describedby="tokenHelpBlock" required="required">
-      <span id="tokenHelpBlock" class="form-text text-muted">Hier das Token für Kunden-API einfügen</span>
-    </div>
-  </div>
-
-  <hr/>
-  </div>
-  <div class="form-group row">
-    <label for="name1" class="col-2 col-form-label">Bauvorhaben</label>
-    <div class="col-10">
-      <input id="Name1" name="Bauvorhaben" placeholder="Beschreibung des Bauvorhabens" type="text" aria-describedby="name1HelpBlock" required="required" class="form-control">
-      <span id="name1HelpBlock" class="form-text text-muted">Name 1 des Kunden-Eintrags erfassen</span>
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="strasse" class="col-2 col-form-label">Bezeichnung</label>
-    <div class="col-10">
-      <input id="strasse" name="Bezeichnung" placeholder="Straße mit Haus" type="text" aria-describedby="strasseHelpBlock" class="form-control">
-      <span id="strasseHelpBlock" class="form-text text-muted">Straße des Kunden mit Hausnummer</span>
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="plz" class="col-2 col-form-label">KundenNr</label>
-    <div class="col-10">
-      <input id="PLZ" name="KundenNr" placeholder="KundenNr" type="text" class="form-control" required="required" aria-describedby="plzHelpBlock">
-      <span id="plzHelpBlock" class="form-text text-muted">PLZ des Kunden erfassen</span>
-    </div>
-  </div>
-  </div>
-  <div class="form-group row">
-    <div class="offset-2 col-10">
-      <input id="response" name="response" value="JSON" placeholder="JSON" type="hidden" class="form-control">
-      <button name="submit" type="submit" class="btn btn-primary">Eintragen</button>
-    </div>
-  </div>
-</form>
-
+      <hr />
+      </div>
+      <div class="form-group row">
+        <label for="name1" class="col-2 col-form-label">Bauvorhaben</label>
+        <div class="col-10">
+          <input id="Name1" name="Bauvorhaben" placeholder="Beschreibung des Bauvorhabens" type="text" aria-describedby="name1HelpBlock" required="required" class="form-control">
+          <span id="name1HelpBlock" class="form-text text-muted">Name 1 des Kunden-Eintrags erfassen</span>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="strasse" class="col-2 col-form-label">Bezeichnung</label>
+        <div class="col-10">
+          <input id="strasse" name="Bezeichnung" placeholder="Straße mit Haus" type="text" aria-describedby="strasseHelpBlock" class="form-control">
+          <span id="strasseHelpBlock" class="form-text text-muted">Straße des Kunden mit Hausnummer</span>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="plz" class="col-2 col-form-label">KundenNr</label>
+        <div class="col-10">
+          <input id="PLZ" name="KundenNr" placeholder="KundenNr" type="text" class="form-control" required="required" aria-describedby="plzHelpBlock">
+          <span id="plzHelpBlock" class="form-text text-muted">PLZ des Kunden erfassen</span>
+        </div>
+      </div>
+      </div>
+      <div class="form-group row">
+        <div class="offset-2 col-10">
+          <input id="response" name="response" value="JSON" placeholder="JSON" type="hidden" class="form-control">
+          <button name="submit" type="submit" class="btn btn-primary">Eintragen</button>
+        </div>
+      </div>
+    </form>
+  </main>
+  <footer>
+  </footer>
 </body>
 
 </html>

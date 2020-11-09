@@ -48,4 +48,14 @@ window.addEventListener('load', function(event) {
       }
     }
   });
+
+  document.querySelector('header > dl.description-header').addEventListener('click', (event) => {
+    var descriptionContainer = document.querySelector('header > dl.description');
+    if (descriptionContainer.classList.contains('open')) {
+      descriptionContainer.classList.remove('open');
+    }
+    else {
+      descriptionContainer.classList.add('open');
+    }
+  })
 });

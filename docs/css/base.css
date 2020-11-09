@@ -1,0 +1,123 @@
+html > body {
+  -webkit-font-smoothing: antialiased;
+  background-color: #CB8E8E;
+}
+
+header {
+  z-index: 100;
+  background-color: #CB8E8E;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+ul, nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  top: 0;
+}
+
+nav {
+  z-index: 100;
+}
+
+li a {
+  display: block;
+  color: green;
+  text-align: center;
+  padding: 2px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  color: #000;
+}
+
+.rotate {
+  transform: rotate(-90deg);
+  /* Legacy vendor prefixes that you probably don't need... */
+  /* Safari */
+  -webkit-transform: rotate(-90deg);
+  /* Firefox */
+  -moz-transform: rotate(-90deg);
+  /* IE */
+  -ms-transform: rotate(-90deg);
+  /* Opera */
+  -o-transform: rotate(-90deg);
+  /* Internet Explorer */
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+
+/* form */
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+main {
+  padding: 1em 0;
+  background-color: #FFF2F2;
+}
+
+main > form, header > dl dt {
+  max-width: 380px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+header > dl dt, header > dl dd {
+  margin: auto;
+  padding: 1em 0;
+}
+
+header > dl.description-header, header > dl.description {
+  background-color: #ffcccd;
+}
+
+header > dl.description {
+  display: none;
+}
+
+header > dl.description.open {
+  display: block;
+}
+
+header > dl.description-header dt {
+  font-weight: bold;
+  cursor: pointer;
+  line-height: 0.8em;
+}
+
+header > dl.description dt * {
+  font-weight: normal;
+  line-height: 1.2em;
+}
+
+.form-group.row {
+}
+
+.form-group.row > .col-form-label {
+  text-align: right;
+  width: 25%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.form-group.row input.form-control {
+}
+
+.form-group.row .col-2 {
+  max-width: none;
+  flex: none;
+  -ms-flex: none;
+}
+
+.form-group.row .col-10 {
+  max-width: 75%;
+  display: inline-block;
+}
