@@ -34,10 +34,51 @@
 
 <body>
   <header>
-    <ul class="idbar">
-      <li>
-        <span class="logo"></span>
-    </ul>
+    <dl class="description-header">
+      <dt>
+        api_put_project - Projekt anlegen
+      </dt>
+    </dl>
+    <dl class="description">
+      <dt>
+        <p>Erforderliche Parameter:</p>
+        <p><i>Bauvorhaben, Bezeichnung</i></p>
+        <p>Ausgeschlossene Parameter:</p>
+        <p><i>PKUUID_20</i></p>
+        <p>Optionale Parameter:</p>
+        <ul>
+          <li>
+            <li><i>response</i></li>
+            <li>(true|false) bestimmt ob der API-Aufruf eine Response zurückgibt</li>
+          </li>
+          <li>
+            <li>textupdatemode</i></li>
+            <li>bestimmt wie Textbausteine für den gegebenen Kunden aktualisiert werden können</li>
+          </li>
+          <ul>
+            <li>default: Standardtexte aus Voreinstellungen</li>
+            <li>customer: Texte wie im Kunden hinterlegt</li>
+            <li>none: Texte lassen</li>
+          </ul>
+          <li>
+            <li><i>paymentupdatemode</i></li>
+            <li>bestimmt ob die Zahlungskonditionen des Projekts oder des Kunden maßgeblich sind</li>
+          <li>
+          <ul>
+            <li>default: Zahlungsbedingungen mit den aus dem Kunden hinterlegten Werten überschreiben</li>
+            <li>none: Werte aus dem Projekt stehen lassen</li>
+          </ul>
+          <li>
+            <li>update</li>
+            <li>(true|false) - bestimmt ob ein bestehender Datensatz aktualisiert wird, hierbei ist der zusätzliche Parameter AuftragsNr (ProjektNr e.g. PK-0003) zwingend erforderlich</li>
+          </li>
+        </ul>
+        <p>Konkretes Beispiel:</p>
+        <p><code>http://meinServer:8080/4DAction/api_put_project?token=41356A67726F4D219330ED924AE68E63&AuftragsNr=S019&update=true&Bauvorhaben=Altbau&Bezeichnung=kleines%20Nebenprojekt&textupdatemode=0&paymentupdatemode=1&response=true</code></p>
+        <p>In der JSON-Rückmeldung wird auch die neue vergebene AuftragsNr zurückgeliefert:</p>
+        <p><code>{"success":true,"error":"","wasUpdate":false,"AuftragsNr":"S014","processingTime":7819,"errorMsg":""}</code></p>
+      </dt>
+    </dl>
   </header>
 
   <main>
