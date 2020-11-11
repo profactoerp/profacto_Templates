@@ -74,6 +74,38 @@ header > dl dt, header > dl dd {
   padding: 1em 0;
 }
 
+header > dl.description-header dt {
+  padding: 0;
+}
+
+header > dl.description-header dt div {
+  padding: 2em 0 1em 0;
+}
+
+header > dl.description-header dt div::after {
+  content: "";
+  width: 48px;
+  height: 48px;
+  margin: 0.5em;
+  background-size: cover;
+  float: right;
+  margin: -1em 0.5em 0 0.5em;
+  display: inline-block;
+  background-image: url(/images/pf_logo_icon.svg);
+}
+
+header > dl.description-header dt div::before {
+  content: "";
+  width: 48px;
+  height: 48px;
+  margin: 0.5em;
+  background-size: cover;
+  float: left;
+  margin: -1em 0.5em 0 0.5em;
+  display: inline-block;
+  background-image: url(/images/pf_logo_icon.svg);
+}
+
 header > dl.description-header, header > dl.description {
   background-color: #E5F1FF;
   cursor: pointer;
