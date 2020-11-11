@@ -91,7 +91,7 @@ header > dl.description-header dt div::after {
   float: right;
   margin: -1em 0.5em 0 0.5em;
   display: inline-block;
-  background-image: url(/images/pf_logo_icon.svg);
+  background-image: url(../images/pf_logo_icon.svg);
 }
 
 header > dl.description-header dt div::before {
@@ -103,7 +103,7 @@ header > dl.description-header dt div::before {
   float: left;
   margin: -1em 0.5em 0 0.5em;
   display: inline-block;
-  background-image: url(/images/pf_logo_icon.svg);
+  background-image: url(../images/pf_logo_icon.svg);
 }
 
 header > dl.description-header, header > dl.description {
