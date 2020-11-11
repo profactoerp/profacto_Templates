@@ -1,11 +1,11 @@
 html > body {
   -webkit-font-smoothing: antialiased;
-  background-color: #CB8E8E;
+  background-color: #96B6E6;
 }
 
 header {
   z-index: 100;
-  background-color: #CB8E8E;
+  background-color: #96B6E6;
 }
 
 div {
@@ -59,11 +59,11 @@ button {
 
 main {
   padding: 1em 0;
-  background-color: #FFF2F2;
+  background-color: #EBEDF1;
 }
 
 main > form, header > dl dt {
-  max-width: 380px;
+  max-width: 60%;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -75,11 +75,14 @@ header > dl dt, header > dl dd {
 }
 
 header > dl.description-header, header > dl.description {
-  background-color: #ffcccd;
+  background-color: #E5F1FF;
+  cursor: pointer;
 }
 
 header > dl.description {
   display: none;
+  background-color: #648BC7;
+  color: #fff;
 }
 
 header > dl.description.open {
@@ -88,13 +91,40 @@ header > dl.description.open {
 
 header > dl.description-header dt {
   font-weight: bold;
-  cursor: pointer;
   line-height: 0.8em;
+  text-align: center;
 }
 
 header > dl.description dt * {
   font-weight: normal;
   line-height: 1.2em;
+}
+
+header p code {
+  padding: 1em;
+  border: 0.2em solid #fff;
+  background-color: #ddd;
+  color: #555;
+  font-weight: bold !important;
+  display: block;
+  border-radius: 0.2em;
+  font-family: Consolas,"courier new";
+}
+
+header ul {
+  margin-left: 1em;
+}
+
+header ul ul {
+  margin-left: 1em;
+}
+
+header ul li {
+  margin: 0.5em 0;
+}
+
+header ul ul li {
+  list-style-type: circle;
 }
 
 .form-group.row {
@@ -120,4 +150,18 @@ header > dl.description dt * {
 .form-group.row .col-10 {
   max-width: 75%;
   display: inline-block;
+}
+
+footer {
+  min-height: 2em;
+}
+
+button.btn-primary {
+  background-color: #648BC7;
+}
+
+@media (max-width: 414px) and (orientation: portrait) {
+  main > form, header > dl dt {
+    max-width: 380px;
+  }
 }
