@@ -42,7 +42,7 @@
   <header>
     <dl class="description-header">
       <dt>
-        <div>api_put_customer</div>
+        <div>API - Kunden</div>
       </dt>
     </dl>
     <dl class="description">
@@ -57,10 +57,22 @@
         <p><code>{"success":true,"wasUpdate":false,"mainKey":"n20-01170","processingTime":54,"errorMsg":""}</code></p>
       </dt>
     </dl>
+    <dl class="sub-header">
+      <dt>
+        <div>Methode: api_put_customer</div>
+      </dt>
+    </dl>
   </header>
 
   <main>
     <form method="GET">
+      <div class="form-group row">
+        <label for="host" class="col-2 col-form-label">Host</label>
+        <div class="col-10">
+          <input id="host" name="host" placeholder="e.g. http://meins-profacto-webserver:8080/" class="form-control" aria-describedby="hostHelpBlock">
+          <span id="hostHelpBlock" class="form-text text-muted">Hier den Host zum Profacto-Webserver eintragen</span>
+        </div>
+      </div>
       <div class="form-group row">
         <label for="token" class="col-2 col-form-label">Token</label>
         <div class="col-10">

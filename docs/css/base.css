@@ -62,6 +62,10 @@ main {
   background-color: #EBEDF1;
 }
 
+header > dl {
+  margin: 0;
+}
+
 main > form, header > dl dt {
   max-width: 60%;
   margin: auto;
@@ -130,6 +134,16 @@ header > dl.description-header dt {
 header > dl.description dt * {
   font-weight: normal;
   line-height: 1.2em;
+}
+
+header > dl.sub-header div {
+  text-align: center;
+  color: #fff;
+  font-size: 0.9em;
+}
+
+header > dl.sub-header dt {
+  padding: 0.5em 0;
 }
 
 header p code {
