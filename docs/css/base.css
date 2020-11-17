@@ -88,8 +88,8 @@ header > dl.description-header dt div {
 
 header > dl.description-header dt div::after {
   content: "";
-  width: 48px;
-  height: 48px;
+  width: 56px;
+  height: 56px;
   margin: 0.5em;
   background-size: cover;
   float: right;
@@ -100,8 +100,8 @@ header > dl.description-header dt div::after {
 
 header > dl.description-header dt div::before {
   content: "";
-  width: 48px;
-  height: 48px;
+  width: 56px;
+  height: 56px;
   margin: 0.5em;
   background-size: cover;
   float: left;
