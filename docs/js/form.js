@@ -24,7 +24,7 @@ window.addEventListener('load', function(event) {
     document.querySelector('input[name=token]').value = params['token'];
   }
 
-  if (window.location.protocol == 'http:' || window.location.protocol == 'https:') {
+  if (window.location.port == '8080') {
     var host = document.querySelector('input[name=host]');
     if (host) {
       host.parentElement.parentElement.remove();
