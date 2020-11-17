@@ -200,6 +200,7 @@ header ul ul li {
 
 footer {
   min-height: 2em;
+  display: none !important;
 }
 
 button.btn-primary {
