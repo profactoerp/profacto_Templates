@@ -36,6 +36,14 @@ li a:hover {
   color: #000;
 }
 
+header a {
+  color: #fff;
+}
+
+header a:hover {
+  color: #ddd;
+}
+
 .rotate {
   transform: rotate(-90deg);
   /* Legacy vendor prefixes that you probably don't need... */
@@ -137,9 +145,14 @@ header > dl.description dt * {
 }
 
 header > dl.sub-header div {
-  text-align: center;
+  text-align: left;
   color: #fff;
   font-size: 0.9em;
+}
+
+header > dl.sub-header div span {
+  float: right;
+  margin-right: 0.5em;
 }
 
 header > dl.sub-header dt {
