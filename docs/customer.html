@@ -67,14 +67,14 @@
   <main>
     <form method="GET">
       <div class="form-group row">
-        <label for="host" class="col-2 col-form-label">Host</label>
+        <label for="host" class="col-2 col-form-label required">Host</label>
         <div class="col-10">
           <input id="host" name="host" placeholder="z.Bsp. profacto-webserver.local" class="form-control" aria-describedby="hostHelpBlock">
           <span id="hostHelpBlock" class="form-text text-muted">Hier den Host zum Profacto-Webserver eintragen</span>
         </div>
       </div>
       <div class="form-group row">
-        <label for="token" class="col-2 col-form-label">Token</label>
+        <label for="token" class="col-2 col-form-label required">Token</label>
         <div class="col-10">
           <input id="token" name="token" placeholder="Token einfügen" type="text" class="form-control" aria-describedby="tokenHelpBlock" required="required">
           <span id="tokenHelpBlock" class="form-text text-muted">Hier das Token für Kunden-API einfügen</span>
@@ -85,35 +85,35 @@
 
       </div>
       <div class="form-group row">
-        <label for="name1" class="col-2 col-form-label">Name</label>
+        <label for="name1" class="col-2 col-form-label required">Name</label>
         <div class="col-10">
           <input id="Name1" name="Name1" placeholder="Hier den ersten Namen einfügen" type="text" aria-describedby="name1HelpBlock" required="required" class="form-control">
           <span id="name1HelpBlock" class="form-text text-muted">Name 1 des Kunden-Eintrags erfassen</span>
         </div>
       </div>
       <div class="form-group row">
-        <label for="strasse" class="col-2 col-form-label">Straße und Hausnr.</label>
+        <label for="strasse" class="col-2 col-form-label required">Straße und Hausnr.</label>
         <div class="col-10">
           <input id="strasse" name="strasse" placeholder="Straße mit Hausnummer" type="text" aria-describedby="strasseHelpBlock" class="form-control">
           <span id="strasseHelpBlock" class="form-text text-muted">Straße des Kunden mit Hausnummer</span>
         </div>
       </div>
       <div class="form-group row">
-        <label for="plz" class="col-2 col-form-label">PLZ</label>
+        <label for="plz" class="col-2 col-form-label required">PLZ</label>
         <div class="col-10">
           <input id="PLZ" name="PLZ" placeholder="Postleitzahl" type="text" class="form-control" required="required" aria-describedby="plzHelpBlock">
           <span id="plzHelpBlock" class="form-text text-muted">PLZ des Kunden erfassen</span>
         </div>
       </div>
       <div class="form-group row">
-        <label for="ort" class="col-2 col-form-label">Ort</label>
+        <label for="ort" class="col-2 col-form-label required">Ort</label>
         <div class="col-10">
           <input id="ort" name="ort" placeholder="Ort" type="text" class="form-control" aria-describedby="ortHelpBlock">
           <span id="ortHelpBlock" class="form-text text-muted">Ort der Adresse</span>
         </div>
       </div>
       <div class="form-group row">
-        <label for="plz" class="col-2 col-form-label"></label>
+        <label for="plz" class="col-2 col-form-label" style="min-height: 3em; font-weight: bold;"><span style="color: #c00">*</span> Pflichtfelder</label>
         <div class="col-10">
           <input id="response" name="response" value="JSON" placeholder="JSON" type="hidden" class="form-control">
           <button name="submit" type="submit" class="btn btn-primary">Eintragen</button>

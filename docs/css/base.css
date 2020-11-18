@@ -197,6 +197,11 @@ header ul ul li {
   overflow: hidden;
 }
 
+.form-group.row > .col-form-label.required::after {
+  content: "*";
+  color: #c00;
+}
+
 .form-group.row input.form-control {
 }
 

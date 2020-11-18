@@ -95,14 +95,14 @@
   <main>
     <form method="GET">
       <div class="form-group row">
-        <label for="host" class="col-2 col-form-label">Host</label>
+        <label for="host" class="col-2 col-form-label required">Host</label>
         <div class="col-10">
           <input id="host" name="host" placeholder="z.Bsp. profacto-webserver.local" class="form-control" aria-describedby="hostHelpBlock">
           <span id="hostHelpBlock" class="form-text text-muted">Hier den Host zum Profacto-Webserver eintragen</span>
         </div>
       </div>
       <div class="form-group row">
-        <label for="token" class="col-2 col-form-label">Token</label>
+        <label for="token" class="col-2 col-form-label required">Token</label>
         <div class="col-10">
           <input id="token" name="token" placeholder="Token einfügen" class="form-control" aria-describedby="tokenHelpBlock" required="required">
           <span id="tokenHelpBlock" class="form-text text-muted">Hier das Token für Projekte-API einfügen</span>
@@ -112,21 +112,21 @@
       <hr />
       </div>
       <div class="form-group row">
-        <label for="name1" class="col-2 col-form-label">Bauvorhaben</label>
+        <label for="name1" class="col-2 col-form-label required">Bauvorhaben</label>
         <div class="col-10">
           <input id="Name1" name="Bauvorhaben" placeholder="Beschreibung des Bauvorhabens" type="text" aria-describedby="name1HelpBlock" required="required" class="form-control">
           <span id="name1HelpBlock" class="form-text text-muted">Name 1 des Kunden-Eintrags erfassen</span>
         </div>
       </div>
       <div class="form-group row">
-        <label for="strasse" class="col-2 col-form-label">Komission</label>
+        <label for="strasse" class="col-2 col-form-label required">Komission</label>
         <div class="col-10">
           <input id="strasse" name="Bezeichnung" placeholder="Komission" type="text" aria-describedby="strasseHelpBlock" class="form-control">
           <span id="strasseHelpBlock" class="form-text text-muted"></span>
         </div>
       </div>
       <div class="form-group row">
-        <label for="plz" class="col-2 col-form-label">KundenNr</label>
+        <label for="plz" class="col-2 col-form-label required">KundenNr</label>
         <div class="col-10">
           <input id="PLZ" name="KundenNr" placeholder="KundenNr" type="text" class="form-control" required="required" aria-describedby="plzHelpBlock">
           <span id="plzHelpBlock" class="form-text text-muted"></span>
@@ -134,7 +134,7 @@
       </div>
       </div>
       <div class="form-group row">
-        <label for="plz" class="col-2 col-form-label"></label>
+        <label for="plz" class="col-2 col-form-label" style="min-height: 3em; font-weight: bold;"><span style="color: #c00">*</span> Pflichtfelder</label>
         <div class="col-10">
           <input id="response" name="response" value="JSON" placeholder="JSON" type="hidden" class="form-control">
           <button name="submit" type="submit" class="btn btn-primary">Eintragen</button>
