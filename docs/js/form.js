@@ -17,6 +17,9 @@ var fetchGetParams = function(string) {
 
 window.addEventListener('load', function(event) {
   var requestPath = '4DAction/api_put_project';
+  var port = 8080;
+  var defaultProtocol = 'http';
+
   var params = fetchGetParams(window.location.search.substr(1));
   var form = document.querySelector('form');
 
@@ -31,13 +34,33 @@ window.addEventListener('load', function(event) {
     }
   }
 
+  var setFormAction = function(event) {
+    var value = hostInput.value;
+    var result = value.match(/(^http(s?)|(^ftp)|(^file))?(:\/\/)?([a-zA-Z0-9\.]*)(:8080)?/);
+    var host = result.length >= 8 ? result[6] : value;
+    var protocol = result.length >= 1 && result[1] != undefined ? result[1] :  defaultProtocol;
+
+    form.action = protocol + '://' + host + ':' + port + '/' + requestPath;
+  }
+
   var hostInput = document.querySelector('input[name=host]');
-  if (hostInput && params['host'] && params['host'].match(/(^http(s?)):\/\/(.*)\//)) {
-    hostInput.value = params['host'];
-    form.action = params['host'] + '/' + requestPath;
+  hostInput.addEventListener('change', setFormAction);
+  hostInput.addEventListener('blur', setFormAction);
+
+  if (hostInput && params['host'] && params['host'].match(/(^http(s?)|(^ftp)|(^file))?(:\/\/)?([a-zA-Z0-9\.]*)(:8080)?/)) {
+      var value = hostInput.value;
+      var result = value.match(/(^http(s?)|(^ftp)|(^file))?(:\/\/)?([a-zA-Z0-9\.]*)(:8080)?/);
+      var host = result.length >= 8 ? result[6] : value;
+      var protocol = result.length >= 1 && result[1] != undefined ? result[1] :  defaultProtocol;
+
+      hostInput.value = result.length >= 8 && result[6] != undefined ? result[6] : hostPinput.value;
+      form.action = protocol + '://' + host + ':' + port + '/' + requestPath;
   } else {
-    var origin = window.location.origin;
-    form.action = origin + '/' + requestPath;
+      var result = window.location.href.match(/(^http(s?)|(^ftp)|(^file))?(:\/\/)?([a-zA-Z0-9\.]*)(:8080)?/);
+      var host = result.length >= 8 ? result[6] : value;
+      var protocol = result.length >= 1 ? result[1] :  defaultProtocol;
+
+      form.action = protocol + '://' + host + ':' + port + '/' + requestPath;
   }
 
   form.addEventListener('submit', (event) => {
