@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>profacto</title>
+  <meta name="description" content="<!--#4DTEXT description-->">
+  <meta name="author" content="profacto">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="mobile-web-app-capable" content="yes">
+
+  <link rel="apple-touch-icon" href="/images/ios/webze.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="/images/ios/webze-72.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="/images/ios/webze@2x.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="/images/ios/icon-72@2x.png" />
+
+  <link rel="shortcut icon" href="/images/favicon.ico" type="image/vnd.microsoft.icon">
+  <link rel="icon" href="/images/favicon.ico" type="image/vnd.microsoft.icon">
+
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/responsive.css">
+  <link rel="stylesheet" href="./css/responsive-tables.css">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="manifest" href="/manifest.json">
+
+  <script type="text/javascript" src="./js/form.js"></script>
+  <script type="text/javascript">
+    var method = 'api_put_item';
+  </script>
+
+  <style type="text/css">
+    header>dl.description-header dt div::before {
+      background-image: url(./images/customer-module.svg);
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <dl class="description-header">
+      <dt>
+        <div>API - Artikel</div>
+      </dt>
+    </dl>
+    <dl class="description">
+      <dt>
+        <p>Erforderliche Parameter:</p>
+        <p><i>ArtikelTypenNr, Artikelgruppe</i></p>
+        <p>Optionale Parameter:</p>
+        <p><i>response, update</i></p>
+        <p>Konkretes Beispiel:</p>
+        <p><code>http://meinserver:8080/4DAction/api_put_item?token=41356A67726F4D219330ED924AE68E63&response=true&ArtikelTypenNr=0815979&Artikelgruppe=Beschl%C3%A4ge%20HE</code></p>
+        <p>In der Response steht dann im Erfolgsfall die ArtikelTypenNr wie übergeben:</p>
+        <p><code>{"success":true,"wasUpdate":false,"ArtikelTypenNr":"0815979","processingTime":43509,"errorMsg":""}</code></p>
+      </dt>
+    </dl>
+    <dl class="sub-header">
+      <dt>
+        <div>Methode: api_put_item<span><a target="_blank" href="https://conf.extragroup.de/display/handbuch/API+-+Artikel">Hilfe</a></span></div>
+      </dt>
+    </dl>
+  </header>
+
+  <main>
+    <form method="GET">
+      <div class="form-group row">
+        <label for="host" class="col-2 col-form-label required">Host</label>
+        <div class="col-10">
+          <input id="host" name="host" placeholder="z.Bsp. profacto-webserver.local" class="form-control" aria-describedby="hostHelpBlock">
+          <span id="hostHelpBlock" class="form-text text-muted">Hier den Host zum Profacto-Webserver eintragen</span>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="token" class="col-2 col-form-label required">Token</label>
+        <div class="col-10">
+          <input id="token" name="token" placeholder="Token einfügen" type="text" class="form-control" aria-describedby="tokenHelpBlock" required="required">
+          <span id="tokenHelpBlock" class="form-text text-muted">Hier das Token für Kunden-API einfügen</span>
+        </div>
+      </div>
+
+      <hr />
+
+      </div>
+      <div class="form-group row">
+        <label for="ArtikelTypenNr" class="col-2 col-form-label required">ArtikelTypenNr</label>
+        <div class="col-10">
+          <input id="ArtikelTypenNr" name="ArtikelTypenNr" placeholder="Hier die ArtikelTypenNr einfügen" type="text" aria-describedby="ArtikelTypenNrHelpBlock" required="required" class="form-control">
+          <span id="ArtikelTypenNrHelpBlock" class="form-text text-muted">ArtikelTypenNr des Artikels erfassen</span>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="Artikelgruppe" class="col-2 col-form-label required">Artikelgruppe</label>
+        <div class="col-10">
+          <input id="Artikelgruppe" name="Artikelgruppe" placeholder="Artikelgruppe eingeben" type="text" aria-describedby="ArtikelgruppeHelpBlock" class="form-control">
+          <span id="ArtikelgruppeHelpBlock" class="form-text text-muted">Artikelgruppe für den anzulegenden Artikel.</span>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="plz" class="col-2 col-form-label" style="min-height: 3em; font-weight: bold;"><span style="color: #c00">*</span> Pflichtfelder</label>
+        <div class="col-10">
+          <input id="response" name="response" value="JSON" placeholder="JSON" type="hidden" class="form-control">
+          <button name="submit" type="submit" class="btn btn-primary">Eintragen</button>
+        </div>
+      </div>
+    </form>
+  </main>
+  <footer>
+  </footer>
+
+</body>
+
+</html>
