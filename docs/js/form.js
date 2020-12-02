@@ -16,7 +16,7 @@ var fetchGetParams = function(string) {
 }
 
 window.addEventListener('load', function(event) {
-  var requestPath = '4DAction/api_put_project';
+  var requestPath = '4DAction/';
   var port = 8080;
   var defaultProtocol = 'http';
 
@@ -40,7 +40,7 @@ window.addEventListener('load', function(event) {
     var host = result.length >= 8 ? result[6] : value;
     var protocol = result.length >= 1 && result[1] != undefined ? result[1] :  defaultProtocol;
 
-    form.action = protocol + '://' + host + ':' + port + '/' + requestPath;
+    form.action = protocol + '://' + host + ':' + port + '/' + requestPath + method;
   }
 
   var hostInput = document.querySelector('input[name=host]');
@@ -60,7 +60,7 @@ window.addEventListener('load', function(event) {
       var host = result.length >= 8 ? result[6] : value;
       var protocol = result.length >= 1 ? result[1] :  defaultProtocol;
 
-      form.action = protocol + '://' + host + ':' + port + '/' + requestPath;
+      form.action = protocol + '://' + host + ':' + port + '/' + requestPath + method;
   }
 
   form.addEventListener('submit', (event) => {
