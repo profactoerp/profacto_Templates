@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+      .cls-2 {
+        fill: #87bc87;
+      }
+      .cls-3 {
+        fill: #57b057;
+        opacity: 0.7;
+      }
+      .cls-4 {
+        fill: #fff;
+        opacity: 0.2;
+      }
+    </style>
+  </defs>
+  <title>artikel</title>
+  <g id="Rahmen"><rect class="cls-1" width="36" height="36"/></g>
+  <g id="Ebene_1" data-name="Ebene 1"><path class="cls-2" d="M7.76,6H22.24A1.76,1.76,0,0,1,24,7.76V31a0,0,0,0,1,0,0H6a0,0,0,0,1,0,0V7.76A1.76,1.76,0,0,1,7.76,6Z"/><path class="cls-3" d="M30,31H13V11.52a.51.51,0,0,1,.51-.52h16a.53.53,0,0,1,.52.53Z"/><polygon class="cls-4" points="28 11 24 31 18 31 22 11 28 11"/></g>
+</svg>
