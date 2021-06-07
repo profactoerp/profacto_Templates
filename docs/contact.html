@@ -81,8 +81,9 @@
         <p>Konkretes Beispiel:</p>
         <p><code>http://meinserver:8080/4DAction/api_put_contact?token=5223EE4D186449B0BDBE9ED7EC53F747&VorName=Heinz&Name=Ruehmann&TypNr=_0573&Typ=1&Telefon=089&Telefax=0891</code></p>
         <p>Zu Beachten ist, daß die TypNr je nach Ansprechpartner der KundenNr, LieferantenNr oder PersonalNr entsprechen muß.</p>
+        <p>Typ beschreibt die Art des Kontakts (0 = Lieferanten Kontakt, 1 = Kunden Kontakt)</p>
         <p>In der JSON-Rückmeldung haben Sie beispielhaft folgenden Inhalt:</p>
-        <p><code>{"success":true,"error":"","processingTime":6996,"errorMsg":""}</code></p>
+        <p><code>{"error":"","success":true,"startProcess":451718387,"responseMode":"JSON","licenseOK":true,"TypNr":"_0573","Typ":1,"RecNum":1533,"wasUpdate":false,"endProcess":451718394,"processingTime":7,"errorMsg":""}</code></p>
       </dt>
     </dl>
     <dl class="sub-header">
@@ -136,7 +137,7 @@
       <div class="form-group row">
         <label for="Typ" class="col-2 col-form-label required">Typ</label>
         <div class="col-10">
-          <input id="Typ" name="Typ" placeholder="Typ des Kontakts (1 = Ansprechpartner | 2 = Anschrift)" type="text" class="form-control" aria-describedby="TypHelpBlock">
+          <input id="Typ" name="Typ" placeholder="Typ des Kontakts (0 = Lieferanten Kontakt | 1 = Kunden Kontakt)" type="text" class="form-control" aria-describedby="TypHelpBlock">
           <span id="TypHelpBlock" class="form-text text-muted">Typ des Kontakts</span>
         </div>
       </div>
