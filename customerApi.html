@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Customer API</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="kunden">
+        <img src="" alt="" />
+        <h3>API - Kunden</h3>
+        <img src="" alt="" />
+      </header>
+      <div class="method">
+        <p>Methode: api_input_customer</p>
+        <p>Hilfe</p>
+      </div>
+
+      <div class="main">
+        <section class="main-section">
+          <div class="form-group row">
+            <label for="host" class="col-2 col-form-label required">Host</label>
+            <div class="col-10">
+              <input
+                id="host"
+                name="host"
+                placeholder="z.Bsp. profacto-webserver.local"
+                class="form-control"
+                aria-describedby="hostHelpBlock"
+              />
+              <span id="hostHelpBlock" class="form-text text-muted"
+                >Hier den Host zum Profacto-Webserver eintragen</span
+              >
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="host" class="col-2 col-form-label required"
+              >Token</label
+            >
+            <div class="col-10">
+              <input
+                id="host"
+                name="host"
+                placeholder="Token einfügen"
+                class="form-control"
+                aria-describedby="hostHelpBlock"
+              />
+              <span id="hostHelpBlock" class="form-text text-muted"
+                >Hier das Token für Kunden-API einfügen</span
+              >
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="host" class="col-2 col-form-label required">Name</label>
+            <div class="col-10">
+              <input
+                id="host"
+                name="host"
+                placeholder="Hier den ersten Namen einfügen"
+                class="form-control"
+                aria-describedby="hostHelpBlock"
+              />
+              <span id="hostHelpBlock" class="form-text text-muted"
+                >Name 1 des Kunden-Eintrags erfassen</span
+              >
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="host" class="col-2 col-form-label required"
+              >Straße und Hausnr.</label
+            >
+            <div class="col-10">
+              <input
+                id="host"
+                name="host"
+                placeholder="Straße mit Hausnummer"
+                class="form-control"
+                aria-describedby="hostHelpBlock"
+              />
+              <span id="hostHelpBlock" class="form-text text-muted"
+                >Straße des Kunden mit Hausnummer</span
+              >
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="host" class="col-2 col-form-label required">PLZ</label>
+            <div class="col-10">
+              <input
+                id="host"
+                name="host"
+                placeholder="Postleitzahl"
+                class="form-control"
+                aria-describedby="hostHelpBlock"
+              />
+              <span id="hostHelpBlock" class="form-text text-muted"
+                >PLZ des Kunden erfassen</span
+              >
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="host" class="col-2 col-form-label required">Ort</label>
+            <div class="col-10">
+              <input
+                id="host"
+                name="host"
+                placeholder="Ort"
+                class="form-control"
+                aria-describedby="hostHelpBlock"
+              />
+              <span id="hostHelpBlock" class="form-text text-muted"
+                >Ort der Adresse</span
+              >
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="host" class="col-2 col-form-label required"
+              >PflichtFelder</label
+            >
+            <button class="trigger">Eintragen</button>
+          </div>
+        </section>
+
+        <div class="modal">
+          
+          <div class="modal-content">
+            <img src="" alt="">
+            <h2>DD-Grundierung</h2>
+            <h2>DD-Grundierung</h2>
+            <img src="" alt="">
+            
+          </div>
+          <div class="main-toggle" >
+            <p>Bestellung erfasst</p>
+          </div>
+          <div class="footer-toggle">
+            <p>BestellStatus</p>
+            <div class="status">
+              <p>my status</p>
+              
+            </div>
+            <span class="close-button">Close</span>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+    <script src="customer.js"></script>
+  </body>
+</html>
