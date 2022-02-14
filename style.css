@@ -4,99 +4,163 @@
   box-sizing: border-box;
 }
 body {
-  background-color: rgb(244, 244, 248);
+  background-color: #cedcf0;
 }
 
 .container {
+  font-family: sans-serif;
   display: flex;
   flex-direction: column;
-  height: 100%;
-  width: 80%;
-  margin-left: 10%;
-  background-color: rgb(176, 176, 223);
+  height: 70rem;
+  width: 100%;
+  background-color: #cedcf0;
 }
+.containers {
+  font-family: sans-serif;
+}
+
 .kunden {
-  height: 7rem;
-  background-color: #d8e3f1;
+  height: 10rem;
+  background-color: #cedcf0;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 1rem 1rem;
 }
-.kunden h3{
-  margin: 0 25%;
-}
-.method {
-  content: "";
-  height: 40px;
-  background-size: cover;
+a {
+  font-family: sans-serif;
   float: left;
+  margin: 0 28%;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 2.2rem;
+ 
+}
+
+.method {
+  
+  height: 4rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #7e9fcf;
-  color: #fff;
+  background-color: #648bc7;
+ 
 }
-.method p {
-  text-align: left;
-  color: #fff;
-  font-size: 0.9em;
-  float: right;
-  margin: 0 20%;
+
+.inpCust {
+  position: absolute;
+  height: 3rem;
+  font-size: 1.3rem;
+  width: 50%;
+  border-radius: 15px;
+  padding: 1rem 0.5rem;
+  outline: none;
+ 
 }
 
 .form-group {
+  background-color: #acbfdb;
   display: flex;
-  flex-direction: row;
-  height: 85%;
-  width: 93%;
+  align-items: center;
+  flex-direction: column;
+  height: 32rem;
+  width: 25rem;
+  border-radius: 30px;
+  
+}
+.sect-details {
+  height: 20rem;
+  display: flex;
+  width: 100%;
+}
+.sect-details p {
+  font-size: 2rem;
 }
 
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 80%;
+  margin-bottom: 20%;
+}
+.contact-details p {
+ margin-left: 76%;
+}
+
+.trigger {
+  background-color: #648bc7;
+  height: 4rem;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-size: 1.8rem;
+  border-radius: 15px;
+  border-style: none;
+}
+.cont-links{
+  color: white;
+}
 label {
   display: flex;
- 
   justify-content: flex-end;
-  margin: 1.2rem .5rem;
+  margin: 1.2rem 0.5rem;
   margin-left: 5%;
   font-size: large;
   width: 12rem;
 }
 
-.form-group.row > .col-form-label.required::before {
-  content: "*";
-  color: #c00;
-  margin-right: 0.2em;
+
+#forGrid {
+
+  display: grid;
+  margin: 3rem 2rem;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
-.form-group.row .col-10 {
-  width: 80%;
-  display: flex;
-  height: 4rem;
-  margin: 1rem 0;
- 
-  flex-direction: column;
+@media screen and (max-width: 1400px) {
+  #forGrid {
+    display: grid;
+    margin: 1rem 3rem;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
-.form-control {
-  padding-left: 0.7rem;
-  font-size: 1.2rem;
-  height: 3rem;
-  width: 100%;
-  border-style: none;
+@media screen and (max-width: 1200px) {
+  #forGrid {
+    display: grid;
+    margin: 1rem 3rem;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  #forGrid {
+    display: grid;
+    margin: 1rem 3rem;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  #forGrid {
+    display: grid;
+    margin: 1rem 3rem;
+    grid-template-columns: 1fr;
+  }
 }
 
 .main {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  background-color: yellow;
-  flex-direction: column;
-  background-color: rgb(226, 226, 231);
+  margin-right: 1rem;
+  margin-top: 2rem;
 }
-.main-section{
-    height: 6rem;
-   
-    width: 60%;
+.main h2 {
+  margin: 1rem 1rem;
 }
+
 .cust-info {
   display: flex;
   height: 4rem;
@@ -110,87 +174,86 @@ label {
   width: 25rem;
 }
 
-
-.modal{
-  position:fixed;
-  width: 20rem;
-  height: 23rem;
- 
-  margin-left: 10%;
-  opacity: 0;
-  visibility: hidden;
-  transform: scale(1.1);
+/*---------------------Contact Styles-------------------*/
+.body1{
+  background-color: #F1DFDC;
 }
-
-.modal-content{
-  height: 8rem;
-  background-color: rgb(216, 236, 213);
+.containers {
+  height: 90vh;
   width: 100%;
-  border-radius: 10px;
 
-}
-.trigger{
-  background-color: rgb(68, 160, 196);
-  height: 3.5rem;
-  color: white;
-  width: 9rem;
-  margin: .3rem 0.2rem;
-  font-size: 1.5rem;
-  border-radius: 10px;
-
+  
 }
 
-.close-button {
-  margin: 0% 80%;
-  width: 4rem;
-  height: 2.5rem;
-  border-style:none;
+header {
+  height: 10rem;
+  width: 100%;
+  background-color: #fdd5d6;
   display: flex;
-  font-size: large;
-  justify-content: center;
   align-items: center;
-  cursor: pointer;
-  color: white;
-  border-radius: 15px;
-  background-color: red;
-
-}
-.close-button:hover{
-  color: white;
-  background-color: black;
-}
-
-.show-modal{
-opacity: 1;
-visibility: visible;
-transform: scale(1.0);
-border-radius: 10px;
-}
-
-.main-toggle{
-  height: 3rem;
-  background-color: rgb(162, 190, 162);
-  display: flex;
   justify-content: center;
-  align-items: center;
-  color: white;
-  font-size: 1.5rem;
 }
 
-.footer-toggle{
-  background-color: rgb(246, 252, 246);
-  height: 100%;
-  border-radius: 10px;
-}
-.status{
+.form-groups {
+  background-color: white;
+  width: 25rem;
   height: 80%;
-  background-color: rgb(226, 248, 226);
+  border-radius: 20px;
+  margin: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header h3 {
+  margin: 0 25%;
+  font-size: 2rem;
+}
+
+.mains {
+  height: 5rem;
+  width: 100%;
+  background-color: #EE705C;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: large;
+  color: white;
+}
+.main1 {
+  height: 35rem;
+  
+}
+.main1 h2 {
+  margin: .5rem 1rem;
+  padding: .5rem 0;
+}
+
+
+
+.status {
+  height: 78%;
+  background-color: #faf6f4;
   margin: 2% 15%;
   width: 70%;
   border-radius: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
-span{
-  opacity: .5;
+
+.sect-details {
+  display: flex;
+  flex-direction: row;
+  margin: 3rem 15%;
+}
+
+.sect-detail p {
+  font-size: 1.5rem;
+}
+
+span {
+  opacity: 0.5;
   font-size: 1.2rem;
-  margin: .2rem;
+  margin: 0.2rem;
 }
