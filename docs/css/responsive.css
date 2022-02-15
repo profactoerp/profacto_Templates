@@ -1,0 +1,687 @@
+tr:nth-child(even) {
+  background: #F6FBF6;
+}
+
+tr:nth-child(odd) {
+  background: #DAEEDA;
+}
+
+body {
+  font-size: 16px;
+  margin: 0;
+}
+
+.production header {
+  display: flex;
+  top: 0;
+  width: 20%;
+  height: auto;
+  margin: auto;
+  float: left;
+}
+
+.partlist header {
+  max-height: 1px;
+}
+
+.production main {
+  display: table;
+  float: left;
+  height: auto;
+  width: 79%;
+  border-left: solid 1px rgb(0, 0, 0, 0.3);
+}
+
+footer {
+  clear: both;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0px;
+}
+
+table th, td {
+  padding: .5rem;
+}
+
+nav {
+  width: 100%;
+  height: 100%;
+}
+
+nav li a {
+  margin: 0 10%;
+  border-bottom: solid 1px rgb(0, 0, 0, 0.1);
+}
+
+/*
+nav li:after {
+    content:'';
+    width:80%;
+    margin: 0 10%;
+    height: 1px;
+    background: rgba(0,0,0,.03);
+    color: lightgrey;
+    bottom: -1px;
+}
+*/
+nav li a {
+  color: black;
+  text-align: center;
+}
+
+nav li a:hover {
+  text-decoration: underline;
+}
+
+.surface table {
+  overflow-x: scroll;
+  width: 100%;
+  display: block;
+}
+
+.container {
+  margin: 0 auto;
+  float: left;
+  padding: 2rem;
+  padding-top: 0;
+  overflow-x: auto;
+}
+
+.container li {
+  padding: 0.2rem;
+}
+
+/*
+body.production .nav {
+  background-image: linear-gradient(270deg, white 0%, rgb(230,255,235) 100%);
+}
+
+body.management .nav {
+  background-image: linear-gradient(270deg, white 0%, rgb(255,245,234) 100%);
+}
+
+body.sales .nav {
+  background-image: linear-gradient(270deg, white 0%, rgb(226,235,255) 100%);
+}
+*/
+.title-info h3 {
+  margin-top: 0;
+  margin-block-end: 0.5em;
+}
+
+.surface-card {
+  float: left;
+  border: solid 1px black;
+  padding: .5rem;
+  margin-right: .5rem;
+  margin-bottom: .5rem;
+}
+
+.surface-card h4 {
+  margin: .5rem auto;
+}
+
+div.wrapper-container.status div.container:first-child {
+  min-width: 320px;
+}
+
+div.wrapper-container.status .container:nth-child(2) form ul>li {
+  margin: 0.5em 0;
+}
+
+div.wrapper-container.other div dl dt,
+div.wrapper-container.stock div dl dt {
+  width: 80px;
+  padding: 2px 0;
+}
+
+div.wrapper-container.other div dl dd,
+div.wrapper-container.stock div dl dd {
+  margin-left: 1em;
+  min-height: 1em;
+}
+
+div.wrapper-container.other div dl dd span.booked:after,
+div.wrapper-container.stock div dl dd span.booked:after {
+  content: '\2714';
+  color: #333;
+}
+
+div.wrapper-container.other div dl dd span.notbooked:after,
+div.wrapper-container.stock div dl dd span.notbooked:after {
+  content: '\2716';
+  color: #333;
+}
+
+div.wrapper-container.other div dl dd span.reserved:after,
+div.wrapper-container.stock div dl dd span.reserved:after {
+  content: '\2714';
+  color: #333;
+}
+
+div.wrapper-container.other div dl dd span.notreserved:after,
+div.wrapper-container.stock div dl dd span.notreserved:after {
+  content: '\2716';
+  color: #333;
+}
+
+div.wrapper-container.status .container:nth-child(2) form ul>li.active {
+  background-color: #ebfceb;
+  color: #333;
+}
+
+div.wrapper-container.status form input[type=checkbox] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  /* box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -30px 20px -24px rgba(0, 0, 0, 0.05); */
+  border-radius: 0.5em;
+  padding: 1.5em;
+  background-color: #DAEEDA;
+  border: 1px solid #88C788;
+  color: #333;
+}
+
+div.wrapper-container.status form label {
+  font-size: 2em;
+  margin-left: 3px;
+  position: relative;
+  top: -16px;
+}
+
+div.wrapper-container.status form input[type=checkbox]+label:after {
+  font-size: 28px;
+  left: 6px;
+}
+
+div.wrapper-container.status form input[type=checkbox]:checked+label:after {
+  content: '\2714';
+  font-size: 1em;
+  position: absolute;
+  top: 2px;
+  left: -46px;
+  color: #88C788;
+}
+
+@media not all and (min-resolution:.001dpcm) { @media {
+  div.wrapper-container.status form input[type=checkbox]:checked+label:after {
+    top: 4px;
+    left: -37px;
+  }
+}}
+
+div.part dt, div.part dd {
+  font-size: 0.8em;
+  width: 90px;
+}
+
+@media (min-width: 768px) {
+  div.part > div:nth-child(3) > div > dl:last-child {
+    display: none;
+  }
+
+  .icon-menu {
+    display: block;
+    margin-top: 0.5rem;
+    background-image: url(/images/production/icon_76pt-edited.png);
+    background-size: 3em;
+    width: 3em;
+    height: 3em;
+    position: relative;
+    z-index: 100;
+  }
+
+  .icon-menu:before {
+    content: none !important;
+  }
+
+  div.wrapper-container.status div.container:first-child {
+    min-width: 375px;
+  }
+
+  div.wrapper-container.status form label {
+    font-size: 1.5em;
+  }
+
+  .cnc > div {
+    width: -webkit-fill-available;
+    width: -moz-available;
+  }
+
+  .cnc > div > dl {
+    clear: none;
+    width: 300px;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    display: inline-block;
+  }
+
+  .cnc > div > dl > dd {
+    clear: none;
+  }
+
+  div.container dt {
+    width: 40%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .production main {
+    border-left: solid 0px #000;
+    border-right: solid 1px rgb(0, 0, 0, 0.3);
+    float: right;
+  }
+
+  .production header {
+    float: right;
+  }
+
+  .icon-menu {
+    display: block;
+    margin-top: 0.5rem;
+    background-image: url(/images/production/icon_76pt-edited.png);
+    background-size: 3em;
+    width: 3em;
+    height: 3em;
+    position: relative;
+    z-index: 100;
+  }
+
+  .icon-menu:before {
+    content: none !important;
+  }
+
+  div.wrapper-container.status div.container:first-child {
+    min-width: 375px;
+  }
+
+  div.wrapper-container.status form label {
+    font-size: 1.5em;
+  }
+}
+
+@media (max-width: 767px) and (orientation: portrait) {
+}
+
+@media (max-height: 767px) and (orientation: landscape) {
+}
+
+@media (max-width: 767px) {
+  .production header {
+    display: block;
+    position: fixed;
+    width: 100%;
+  }
+
+  nav:not(.is-open) {
+    top: 0;
+    left: 0;
+    transform: translate3d(0, -110%, 0);
+    width: auto;
+    z-index: 100;
+  }
+
+  nav {
+    transition: all 200ms ease-in-out;
+    transform: translate3d(0, 0, 0);
+    width: auto;
+    margin: 0 1.5rem;
+    /* padding-bottom: 20px; */
+    box-shadow: 0 2px 5px rgba(0, 0, 0);
+    z-index: -100;
+    background-color: white;
+  }
+
+  nav li {
+    float: none;
+    position: relative;
+    border: none;
+  }
+
+  table {
+    width: auto;
+  }
+
+  .title-info ul.menu-icon-container {
+    display: block;
+    position: fixed;
+  }
+
+  .icon-menu {
+    display: block;
+    margin-top: 0.5rem;
+    background-image: url(/images/production/icon_76pt-edited.png);
+    background-size: 3em;
+    width: 3em;
+    height: 3em;
+    position: relative;
+    z-index: 100;
+  }
+
+  .icon-menu:before {
+    content: none !important;
+  }
+
+  div.title-info ul:nth-child(2) {
+    margin-left: 46px;
+  }
+
+  body>header>nav {
+    margin-left: 48px;
+  }
+
+  nav li:after {
+    content: '';
+    width: 80%;
+    margin: 0 10%;
+    height: 1px;
+    background: rgba(0, 0, 0, .03);
+    color: lightgrey;
+    position: absolute;
+    bottom: -1px;
+  }
+
+  .production main {
+    width: 100%;
+    border-left: none;
+  }
+
+  div#nav-switch {
+    display: none !important;
+  }
+
+  .container {
+    padding: 1em;
+    width: -webkit-fill-available;
+    width: -moz-available;
+  }
+
+  ul.big-logo li i {
+    width: 24px;
+    height: 25px;
+    background-image: url(/images/pf_logo.svg);
+    background-size: 128px;
+    background-repeat-x: no-repeat;
+    background-repeat: repeat-y;
+    background-position: 0px;
+  }
+
+  .wrapper-container .common dl:nth-child(2),
+  .wrapper-container .common dl:nth-child(5),
+  .wrapper-container .common dl:nth-child(6),
+  .wrapper-container .common dl:nth-child(7),
+  .wrapper-container .common dl:nth-child(8) {
+    display: none;
+  }
+
+  .wrapper-container .common dl dt {
+    font-size: 1.4em;
+    font-weight: bold;
+    width: -webkit-fill-available;
+    width: -moz-available;
+  }
+
+  .wrapper-container .common dl dt span {
+    padding: 0;
+  }
+
+  .wrapper-container .common dl dd div.input {
+    border: none;
+    color: inherit;
+    height: auto;
+    background-color: inherit;
+    padding-left: 0.5em;
+    max-width: none;
+    min-width: none;
+  }
+
+  .wrapper-container .common dl dd div.input-textarea {
+    height: auto;
+    width: auto;
+    max-width: none;
+    min-width: none;
+  }
+
+  div.container.sketch > h2 {
+    margin-top: 0;
+    margin-block-start: 0;
+  }
+
+  .wrapper-container.other > div.container:not(:first-child) {
+    display: none;
+  }
+
+  @-moz-document url-prefix() {
+    div.wrapper-container.status form input[type="checkbox"]:checked + label::after {
+      top: 4px;
+      left: -39px;
+    }
+  }
+}
+
+@media (max-height: 767px) and (orientation: landscape) {
+  div.wrapper-container.status .container:nth-child(2) {
+    width: 100%;
+  }
+
+  div.wrapper-container.status .container:nth-child(2) form ul>li.active {
+    background-color: #ebfceb;
+    color: #333;
+  }
+
+  div.wrapper-container.status form label {
+    font-size: 2em;
+    margin-left: 12px;
+  }
+
+  div.wrapper-container.status form input[type=checkbox]+label:after {
+    font-size: 28px;
+    left: 6px;
+  }
+
+  div.wrapper-container.status form input[type=checkbox]:checked+label:after {
+    left: -52px;
+  }
+}
+
+@media (max-width: 580px) {
+  dl dd {
+    margin-inline-start: 0;
+    margin: 0.2em 0;
+  }
+
+  .sketch {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 414px) and (orientation: portrait) {
+  body.production, .production main {
+    background-color: #F6FBF6;
+  }
+
+  div.part {
+    border-bottom: none;
+  }
+
+  .sketch canvas {
+    background-color: #fff;
+    border: none;
+  }
+
+  .container {
+    font-size: 1.37em;
+  }
+
+  .flex-container {
+    font-size: 1.37em;
+  }
+
+  div.part .first, div.part dl:nth-child(2), div.part dl:nth-child(3), div.part dl:nth-child(5) {
+    display: none;
+  }
+
+  div.part > div {
+    width: 100%;
+  }
+
+  div.part dt, div.part dd {
+  }
+
+  div.part dl:last-child dd {
+    text-align: right;
+    padding-right: 1em;
+  }
+
+  div.part dl:nth-child(4) {
+    float: right;
+  }
+
+  div.part dl dt {
+    display: none;
+  }
+
+  div.part dl:last-child dt {
+    display: block;
+  }
+
+  div.part dl:last-child {
+    width: 100%;
+  }
+
+  div.part dl:last-child dt, div.part dl:last-child dd {
+    width: 22%;
+  }
+
+  div.part dl {
+    font-size: 1.5em;
+  }
+
+  div.part dl.last dd.last {
+    clear: both;
+    width: 100%;
+    text-align: center;
+    padding-left: 1em;
+  }
+
+  div.part dd span.input-number {
+    font-size: 1em !important;
+  }
+
+  div.part dd > span::before {
+    margin-left: -1.5em;
+  }
+
+  div.part dl.last {
+    width: 100%;
+  }
+
+  div.part dl.last span {
+    height: 1.3em;
+    text-align: left;
+    width: 33%;
+  }
+
+  div.part dl.last span > span {
+    width: 45px;
+  }
+
+  div.part dl > dd {
+    font-weight: normal;
+  }
+
+  body {
+    font-size: 14px;
+  }
+
+  .sketch {
+    min-width: 0;
+  }
+
+  dd input, dd select, dd span {
+    height: 8px;
+  }
+
+  .container {
+    width: 100%;
+    text-align: left;
+  }
+
+  .slidecontainer form div ul {
+    display: none;
+  }
+
+  div.part span.input-number {
+    border: none;
+    background-color: inherit;
+    color: #688068;
+    font-weight: bold !important;
+  }
+
+  nav li a {
+    font-size: 1.5em;
+  }
+}
+
+@media (max-width: 360px) and (orientation: portrait) {
+  body {
+    font-size: 12px;
+  }
+
+  .sketch {
+  }
+
+  /* dd input, dd select, dd span {
+    height: 6px;
+  } */
+
+  dd input, dd select, dd span {
+    height: 6px;
+  }
+
+  div.wrapper-container.other div.container:nth-child(2) dl dd span,
+  div.wrapper-container.stock div.container dl dd span {
+    margin-top: -0.4em;
+  }
+}
+
+@media (min-width: 360px) and (max-width: 414px) and (orientation: portrait) {
+  div.wrapper-container.status div.container:first-child {
+    min-width: 320px;
+  }
+}
+
+@media (max-width: 320px) and (orientation: portrait) {
+  body {
+    font-size: 10px;
+  }
+
+  div.sketch {
+  }
+
+  body.production .title-info div:nth-child(2), body.production .title-info div:nth-child(4) {
+    flex-basis: 60%;
+  }
+}
+
+@media (max-height: 414px) and (orientation: landscape) {
+  .container {
+    width: 100%;
+  }
+
+  /* div.wrapper-container.status form input[type=checkbox]:checked+label:after {
+    top: 14px;
+    left: -38px;
+  } */
+}
+
+@media (max-height: 411px) and (orientation: landscape) {}
+
+@media (max-height: 400px) and (orientation: landscape) {}
+
+@media (max-height: 375px) and (orientation: landscape) {}
+
+@media (max-height: 360px) and (orientation: landscape) {}
+
+@media (max-height: 320px) and (orientation: landscape) {}

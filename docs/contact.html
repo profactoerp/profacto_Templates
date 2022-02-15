@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>profacto</title>
+  <meta name="description" content="<!--#4DTEXT description-->">
+  <meta name="author" content="profacto">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="mobile-web-app-capable" content="yes">
+
+  <link rel="apple-touch-icon" href="/images/ios/webze.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="/images/ios/webze-72.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="/images/ios/webze@2x.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="/images/ios/icon-72@2x.png" />
+
+  <link rel="shortcut icon" href="/images/favicon.ico" type="image/vnd.microsoft.icon">
+  <link rel="icon" href="/images/favicon.ico" type="image/vnd.microsoft.icon">
+
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/responsive.css">
+  <link rel="stylesheet" href="./css/responsive-tables.css">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="manifest" href="/manifest.json">
+
+  <script type="text/javascript" src="./js/form.js"></script>
+  <script type="text/javascript">
+    var method = 'api_put_contact';
+  </script>
+
+  <style type="text/css">
+    header>dl.description-header dt div::before {
+      background-image: url(./images/contact-module.svg);
+    }
+
+    header {
+      background-color: #FFB2B3;
+    }
+
+    header>dl.description-header {
+      background-color: #FFE6E6;
+    }
+
+    header>dl.description {
+      background-color: #FF8082;
+    }
+
+    button.btn-primary {
+      background-color: #FF8082;
+      border-color: #E57375;
+    }
+
+    button.btn-primary:hover {
+      background-color: #E57375;
+      border-color: #E57375;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <dl class="description-header">
+      <dt>
+        <div>API - Kontakte</div>
+      </dt>
+    </dl>
+    <dl class="description">
+      <dt>
+        <p>Erforderliche Parameter: </p>
+        <p><i>VorName, Name, TypNr, Typ</i></p>
+        <p>Ausgeschlossene Parameter:</p>
+        <p><i>PKUUID_90</i></p>
+        <p>Optionale Parameter:</p>
+        <p><i>Telefon, Telefax, response, update</i></p>
+        <p>Konkretes Beispiel:</p>
+        <p><code>http://meinserver:8080/4DAction/api_put_contact?token=5223EE4D186449B0BDBE9ED7EC53F747&VorName=Heinz&Name=Ruehmann&TypNr=_0573&Typ=1&Telefon=089&Telefax=0891</code></p>
+        <p>Zu Beachten ist, daß die TypNr je nach Ansprechpartner der KundenNr, LieferantenNr oder PersonalNr entsprechen muß.</p>
+        <p>Typ beschreibt die Art des Kontakts (0 = Lieferanten Kontakt, 1 = Kunden Kontakt)</p>
+        <p>In der JSON-Rückmeldung haben Sie beispielhaft folgenden Inhalt:</p>
+        <p><code>{"error":"","success":true,"startProcess":451718387,"responseMode":"JSON","licenseOK":true,"TypNr":"_0573","Typ":1,"RecNum":1533,"wasUpdate":false,"endProcess":451718394,"processingTime":7,"errorMsg":""}</code></p>
+      </dt>
+    </dl>
+    <dl class="sub-header">
+      <dt>
+        <div>Methode: api_put_contact<span><a target="_blank" href="https://conf.extragroup.de/display/handbuch/API+-+Kontakte#APIKontakte-api_put_contact(APIKontakte)-SchreibteinenKontaktzueinemvorhandendenKundenoderLieferanten.">Hilfe</a></span></div>
+      </dt>
+    </dl>
+  </header>
+
+  <main>
+    <form method="GET">
+      <div class="form-group row">
+        <label for="host" class="col-2 col-form-label required">Host</label>
+        <div class="col-10">
+          <input id="host" name="host" placeholder="z.Bsp. profacto-webserver.local" class="form-control" aria-describedby="hostHelpBlock">
+          <span id="hostHelpBlock" class="form-text text-muted">Hier den Host zum Profacto-Webserver eintragen</span>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="token" class="col-2 col-form-label required">Token</label>
+        <div class="col-10">
+          <input id="token" name="token" placeholder="Token einfügen" type="text" class="form-control" aria-describedby="tokenHelpBlock" required="required">
+          <span id="tokenHelpBlock" class="form-text text-muted">Hier das Token für Kunden-API einfügen</span>
+        </div>
+      </div>
+
+      <hr />
+
+      </div>
+      <div class="form-group row">
+        <label for="VorName" class="col-2 col-form-label required">Vorname</label>
+        <div class="col-10">
+          <input id="VorName" name="VorName" placeholder="Hier den ersten Namen einfügen" type="text" aria-describedby="VorNameHelpBlock" required="required" class="form-control">
+          <span id="VorNameHelpBlock" class="form-text text-muted">Vorname des Kontakts erfassen</span>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="Name" class="col-2 col-form-label required">Name</label>
+        <div class="col-10">
+          <input id="Name" name="Name" placeholder="Den Zunamen eintragen" type="text" aria-describedby="NameHelpBlock" class="form-control">
+          <span id="NameHelpBlock" class="form-text text-muted">Zuname des Kontakts</span>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="TypNr" class="col-2 col-form-label required">TypNr</label>
+        <div class="col-10">
+          <input id="TypNr" name="TypNr" placeholder="Die Kundennummer dem der Kontakt hinzugefügt werden soll" type="text" class="form-control" required="required" aria-describedby="TypNrHelpBlock">
+          <span id="TypNrHelpBlock" class="form-text text-muted">TypNr des Kunden erfassen</span>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="Typ" class="col-2 col-form-label required">Typ</label>
+        <div class="col-10">
+          <input id="Typ" name="Typ" placeholder="Typ des Kontakts (0 = Lieferanten Kontakt | 1 = Kunden Kontakt)" type="text" class="form-control" aria-describedby="TypHelpBlock">
+          <span id="TypHelpBlock" class="form-text text-muted">Typ des Kontakts</span>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="plz" class="col-2 col-form-label" style="min-height: 3em; font-weight: bold;"><span style="color: #c00">*</span> Pflichtfelder</label>
+        <div class="col-10">
+          <input id="response" name="response" value="JSON" placeholder="JSON" type="hidden" class="form-control">
+          <button name="submit" type="submit" class="btn btn-primary">Eintragen</button>
+        </div>
+      </div>
+    </form>
+  </main>
+  <footer>
+  </footer>
+
+</body>
+
+</html>

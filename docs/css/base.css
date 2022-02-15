@@ -1,0 +1,233 @@
+html > body {
+  -webkit-font-smoothing: antialiased;
+  background-color: #EBEDF1;
+}
+
+header {
+  z-index: 100;
+  background-color: #96B6E6;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+ul, nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  top: 0;
+}
+
+nav {
+  z-index: 100;
+}
+
+li a {
+  display: block;
+  color: green;
+  text-align: center;
+  padding: 2px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  color: #000;
+}
+
+header a {
+  color: #fff;
+}
+
+header a:hover {
+  color: #ddd;
+}
+
+.rotate {
+  transform: rotate(-90deg);
+  /* Legacy vendor prefixes that you probably don't need... */
+  /* Safari */
+  -webkit-transform: rotate(-90deg);
+  /* Firefox */
+  -moz-transform: rotate(-90deg);
+  /* IE */
+  -ms-transform: rotate(-90deg);
+  /* Opera */
+  -o-transform: rotate(-90deg);
+  /* Internet Explorer */
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+
+/* form */
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+main {
+  padding: 1em 0;
+  background-color: #EBEDF1;
+}
+
+header > dl {
+  margin: 0;
+}
+
+main > form, header > dl dt {
+  max-width: 60%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+header > dl dt, header > dl dd {
+  margin: auto;
+  padding: 1em 0;
+}
+
+header > dl.description-header dt {
+  padding: 0;
+}
+
+header > dl.description-header dt div {
+  padding: 2em 0 1em 0;
+}
+
+header > dl.description-header dt div::after {
+  content: "";
+  width: 56px;
+  height: 56px;
+  margin: 0.5em;
+  background-size: cover;
+  float: right;
+  margin: -1em 0.5em 0 0.5em;
+  display: inline-block;
+  background-image: url(../images/pf_logo_icon.svg);
+}
+
+header > dl.description-header dt div::before {
+  content: "";
+  width: 56px;
+  height: 56px;
+  margin: 0.5em;
+  background-size: cover;
+  float: left;
+  margin: -1em 0.5em 0 0.5em;
+  display: inline-block;
+  background-image: url(../images/pf_logo_icon.svg);
+}
+
+header > dl.description-header, header > dl.description {
+  background-color: #D8E3F1;
+  cursor: pointer;
+}
+
+header > dl.description {
+  display: none;
+  background-color: #648BC7;
+  color: #fff;
+}
+
+header > dl.description.open {
+  display: block;
+}
+
+header > dl.description-header dt {
+  font-weight: bold;
+  line-height: 0.8em;
+  text-align: center;
+}
+
+header > dl.description dt * {
+  font-weight: normal;
+  line-height: 1.2em;
+}
+
+header > dl.sub-header div {
+  text-align: left;
+  color: #fff;
+  font-size: 0.9em;
+}
+
+header > dl.sub-header div span {
+  float: right;
+  margin-right: 0.5em;
+}
+
+header > dl.sub-header dt {
+  padding: 0.5em 0;
+}
+
+header p code {
+  padding: 1em;
+  border: 0.2em solid #fff;
+  background-color: #ddd;
+  color: #555;
+  font-weight: bold !important;
+  display: block;
+  border-radius: 0.2em;
+  font-family: Consolas,"courier new";
+}
+
+header ul {
+  margin-left: 1em;
+}
+
+header ul ul {
+  margin-left: 1em;
+}
+
+header ul li {
+  margin: 0.5em 0;
+}
+
+header ul ul li {
+  list-style-type: circle;
+}
+
+.form-group.row {
+}
+
+.form-group.row > .col-form-label {
+  text-align: right;
+  width: 25%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.form-group.row > .col-form-label.required::before {
+  content: "*";
+  color: #c00;
+  margin-right: 0.2em;
+}
+
+.form-group.row input.form-control {
+}
+
+.form-group.row .col-2 {
+  max-width: none;
+  flex: none;
+  -ms-flex: none;
+}
+
+.form-group.row .col-10 {
+  max-width: 75%;
+  display: inline-block;
+}
+
+footer {
+  min-height: 2em;
+  display: none !important;
+}
+
+button.btn-primary {
+  background-color: #648BC7;
+}
+
+@media (max-width: 414px) and (orientation: portrait) {
+  main > form, header > dl dt {
+    max-width: 380px;
+  }
+}

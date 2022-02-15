@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>profacto</title>
+  <meta name="description" content="<!--#4DTEXT description-->">
+  <meta name="author" content="profacto">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="mobile-web-app-capable" content="yes">
+
+  <link rel="apple-touch-icon" href="/images/ios/webze.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="/images/ios/webze-72.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="/images/ios/webze@2x.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="/images/ios/icon-72@2x.png" />
+
+  <link rel="shortcut icon" href="/images/favicon.ico" type="image/vnd.microsoft.icon">
+  <link rel="icon" href="/images/favicon.ico" type="image/vnd.microsoft.icon">
+
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/responsive.css">
+  <link rel="stylesheet" href="./css/responsive-tables.css">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="manifest" href="/manifest.json">
+
+  <script type="text/javascript" src="./js/form.js"></script>
+  <script type="text/javascript">
+    var method = 'api_put_bestellung';
+  </script>
+
+  <style type="text/css">
+    header {
+      background-color: #F3DE85;
+    }
+
+    header>dl.description-header {
+      background-color: #F6ECC4;
+    }
+
+    header>dl.description {
+      background-color: #F4D555;
+    }
+
+    header>dl.description-header dt div::before {
+      background-image: url(./images/order-module.svg);
+    }
+
+    button.btn-primary {
+      background-color: #F4D555;
+      border-color: #E5BE16;
+    }
+
+    button.btn-primary:hover {
+      background-color: #E5BE16;
+      border-color: #E5BE16;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <dl class="description-header">
+      <dt>
+        <div>API - Bestellung</div>
+      </dt>
+    </dl>
+    <dl class="description">
+      <dt>
+        <p>Erforderliche Parameter: </p>
+        <p><i>Token</i></p>
+        <p>Ausgeschlossene Parameter:</p>
+        <p><i>PKUUID_104</i></p>
+        <p>Optionale Parameter:</p>
+        <p><i>Besteller (personalnr), Lieferant, BestellNr (nur bei update), update, response</i></p>
+        <p>Konkretes Beispiel:</p>
+        <p><code>http://meinserver:8080/4DAction/api_put_bestellung?token=C900BFE22DFF4B75917837006E247932&response=true&Lieferant=70015&Besteller=10</code></p>
+        <p>In der JSON-Rückmeldung haben Sie beispielhaft folgenden Inhalt:</p>
+        <p><code>{"success":true,"error":"","wasUpdate":false,"BestellNr":130128,"processingTime":29210,"errorMsg":""}</code></p>
+      </dt>
+    </dl>
+    <dl class="sub-header">
+      <dt>
+        <div>Methode: api_put_bestellung<span><a target="_blank" href="https://conf.extragroup.de/display/handbuch/API+-+Bestellung#APIBestellung-Bestellung-API-Methoden">Hilfe</a></span></div>
+      </dt>
+    </dl>
+  </header>
+
+  <main>
+    <form method="GET">
+      <div class="form-group row">
+        <label for="host" class="col-2 col-form-label required">Host</label>
+        <div class="col-10">
+          <input id="host" name="host" placeholder="z.Bsp. profacto-webserver.local" class="form-control" aria-describedby="hostHelpBlock">
+          <span id="hostHelpBlock" class="form-text text-muted">Hier den Host zum Profacto-Webserver eintragen</span>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="token" class="col-2 col-form-label required">Token</label>
+        <div class="col-10">
+          <input id="token" name="token" placeholder="Token einfügen" type="text" class="form-control" aria-describedby="tokenHelpBlock" required="required">
+          <span id="tokenHelpBlock" class="form-text text-muted">Hier das Token für Kunden-API einfügen</span>
+        </div>
+      </div>
+
+      <hr />
+
+      </div>
+      <div class="form-group row">
+        <label for="Besteller" class="col-2 col-form-label required">Besteller</label>
+        <div class="col-10">
+          <input id="Besteller" name="Besteller" placeholder="Hier die Besteller einfügen" type="text" aria-describedby="BestellerNrHelpBlock" required="required" class="form-control">
+          <span id="BestellerNrHelpBlock" class="form-text text-muted">Besteller der Bestellung erfassen (Personalnummer)</span>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="Lieferant" class="col-2 col-form-label required">Lieferant</label>
+        <div class="col-10">
+          <input id="Lieferant" name="Lieferant" placeholder="Lieferant eingeben" type="text" aria-describedby="LieferantHelpBlock" class="form-control">
+          <span id="LieferantHelpBlock" class="form-text text-muted">Lieferant für die Bestellung eintragen.</span>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="plz" class="col-2 col-form-label" style="min-height: 3em; font-weight: bold;"><span style="color: #c00">*</span> Pflichtfelder</label>
+        <div class="col-10">
+          <input id="response" name="response" value="JSON" placeholder="JSON" type="hidden" class="form-control">
+          <button name="submit" type="submit" class="btn btn-primary">Eintragen</button>
+        </div>
+      </div>
+    </form>
+  </main>
+  <footer>
+  </footer>
+
+</body>
+
+</html>
